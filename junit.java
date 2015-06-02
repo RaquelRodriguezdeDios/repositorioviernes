@@ -59,5 +59,26 @@ public class Prueba {
 		}
 	}
 
+	//Comprobamos si al acceder fuera de los límites del array nos lanza una excepción tipo BinaryStringException
+	@Test(expected = BinaryStringException.class)
+	public void testGetOutOfLimitBit(){
+		bitset4.get(56);
+	}
+	
+// Apartado 4 examen
 
-
+	public void set(int index, char value){
+		try{
+			bits[index] = value;
+		} catch(RuntimeException e){
+			throw new BinaryStringException();
+		}
+	}
+	
+	//Lo mismo que en el apartado anterior pero esta vez utilizando el método set().
+	@Test(expected = BinaryStringException.class)
+	public void testSetOutOfLimitBit(){
+		bitset4.set(56,'0');
+	}
+	
+	
