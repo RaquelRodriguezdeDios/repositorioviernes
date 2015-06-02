@@ -35,5 +35,29 @@ public class Prueba {
 		assertEquals('1',bitset3.get(1));
 	}
 	
+// Tercer apartado examen
+
+	package prBinaryString;
 	
+	public class BinaryStringException extends RuntimeException {
+		
+		public BinaryStringException () {
+			super();
+		}
+		
+		public BinaryStringException (String msg) {
+			super(msg);
+		}
+		
+	}
+	
+	public char get (int index) {
+		try {
+			return bits[index];
+		} catch (RuntimeException e) {
+			throw new BinaryStringException;
+		}
+	}
+
+
 
